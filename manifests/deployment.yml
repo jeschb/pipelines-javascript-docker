@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jeschbpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jeschbpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: jeschbpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: jeschbpipelinesjavascriptdocker 
+          image: mycontainerregistryjeschb.azurecr.io/jeschbpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
